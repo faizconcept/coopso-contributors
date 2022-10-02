@@ -44,6 +44,10 @@ class Coopso_Contributors_Admin_Meta_Box {
 	 */
 	public function save_contributors_box( $post_id ) {
 
+		if ( ! isset( $_POST['coopso_add_contributor_nonce'] ) || ! wp_verify_nonce( $_POST['coopso_add_contributor_nonce'], plugin_basename( __FILE__ ) ) ) {
+			return;
+		}
+
 		$cp_contributors_field = isset( $_POST['cp_contributors_field'] ) ? $_POST['cp_contributors_field'] : '';
 		if ( ! empty( $cp_contributors_field ) ) {
 
