@@ -54,10 +54,8 @@ class Coopso_Contributors_Admin_Meta_Box {
 			return;
 		}
 
-		$_POST['cp_contributors_field']
-		$coopso_contributor_nonce_name = filter_input( INPUT_POST, 'cp_contributors_field', FILTER_SANITIZE_STRING );
-
-		$cp_contributors_users = ( ! empty( $_POST['cp_contributors_field'] ) ? wp_unslash( $_POST['cp_contributors_field'] ) : array() );
+		$cp_contributors_field = filter_input( INPUT_POST, 'cp_contributors_field', FILTER_REQUIRE_ARRAY );
+		$cp_contributors_users = ( ! empty( $cp_contributors_field ) ? wp_unslash( $cp_contributors_field ) : array() );
 
 		if ( ! empty( $cp_contributors_users ) ) {
 

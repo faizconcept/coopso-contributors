@@ -1,6 +1,6 @@
 <?php
 /**
- * File to display contributors at Front end.	
+ * File to display contributors at Front end.
  *
  * @package Contributors
  *
