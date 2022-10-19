@@ -11,6 +11,8 @@
  */
 
 define( 'COOPSO_CONTRIBUTORS_DIR', dirname( __FILE__ ) );
+define( 'COOPSO_CONTRIBUTORS_PLUGIN_BASE_FILE', plugin_basename( __FILE__ ) );
+
 
 // include contributors admin meta box class.
 require_once COOPSO_CONTRIBUTORS_DIR . '/includes/classes/class-coopso-contributors-admin-meta-box.php';

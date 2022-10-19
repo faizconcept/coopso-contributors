@@ -44,22 +44,20 @@ class Coopso_Contributors_Admin_Meta_Box {
 	 */
 	public function save_contributors_box( $post_id ) {
 
-		if ( ! isset( $_POST['coopso_add_contributor_nonce'] ) || ! wp_verify_nonce( $_POST['coopso_add_contributor_nonce'], plugin_basename( __FILE__ ) ) ) {
+		if ( isset( $_POST['post_type'] ) && 'post' === $_POST['post_type'] && ! current_user_can( 'edit_post', $post_id ) ) {
 			return;
 		}
 
-		$cp_contributors_field = isset( $_POST['cp_contributors_field'] ) ? $_POST['cp_contributors_field'] : '';
-		if ( ! empty( $cp_contributors_field ) ) {
+		// Check if the nonce valued we received is the same we created.
+		if ( ! isset( $_POST['coopso_contributor_nonce_name'] ) || ! wp_verify_nonce( wp_unslash( $_POST['coopso_contributor_nonce_name'] ), COOPSO_CONTRIBUTORS_PLUGIN_BASE_FILE ) ) {
+			return;
+		}
 
-			$cp_user_list = array();
-			foreach ( $cp_contributors_field as $cp_user ) {
-				$cp_user_list[] = sanitize_text_field( $cp_user );
-			}
+		$cp_contributors_users = ( ! empty( $_POST['cp_contributors_field'] ) ? wp_unslash( $_POST['cp_contributors_field'] ) : array() );
 
-			$cp_users = implode( ',', $cp_user_list );
-			if ( isset( $cp_users ) ) {
-				update_post_meta( $post_id, 'coopso_contributors_box_id', $cp_users );
-			}
+		if ( ! empty( $cp_contributors_users ) ) {
+
+			update_post_meta( $post_id, 'coopso_contributors_box_id', $cp_contributors_users );
 		}
 	}
 
@@ -69,8 +67,9 @@ class Coopso_Contributors_Admin_Meta_Box {
 	 * @param \WP_Post $post   Post object.
 	 */
 	public function coopso_contributors_box_html( $post ) {
-		$cp_users_str = get_post_meta( $post->ID, 'coopso_contributors_box_id', true );
-		$cp_users     = explode( ',', $cp_users_str );
+
+		$cp_contributors_users = get_post_meta( $post->ID, 'coopso_contributors_box_id' );
+		$cp_contributors_users = $cp_contributors_users[0];
 
 		$user_query = new WP_User_Query(
 			array(

@@ -19,7 +19,7 @@ class Coopso_Contributors_Frontend_Meta_Box {
 	 * Constructor function.
 	 */
 	public function __construct() {
-		add_action( 'init', array( $this, 'register_frontend_contributors_stylesheet' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'register_frontend_contributors_stylesheet' ) );
 		add_filter( 'the_content', array( $this, 'coopso_contributors_display_after_content' ) );
 	}
 
@@ -46,9 +46,32 @@ class Coopso_Contributors_Frontend_Meta_Box {
 			$contributors = get_post_meta( $post_id, 'coopso_contributors_box_id' );
 			if ( ! empty( $contributors ) ) {
 
-				include_once COOPSO_CONTRIBUTORS_DIR . '/templates/frontend/coopso-contributors-frontend-meta-box.php';
-				$contributors_meta_box_html = display_frontend_contributors_meta_box( $contributors );
-				$content                    = $content . $contributors_meta_box_html;
+				$contributors_list = $contributors[0];
+
+				$contributors_box_html = '<div class="contributors-box-out-area">' .
+										'<div class="contributors-heading">Contributors:</div>' .
+											'<div class="contributor-list">';
+				$total_contributors    = count( $contributors_list );
+
+				for ( $i = 0; $i < $total_contributors; $i ++ ) {
+
+						$author_display_name = get_the_author_meta( 'display_name', $contributors_list[ $i ] );
+						$author_page_url     = get_author_posts_url( $contributors_list[ $i ] );
+						$contributor_image   = get_avatar( $contributors_list[ $i ], 70 );
+
+						$contributors_box_html .= '<div class="contributor-box">' .
+									'<a href="' . esc_url( $author_page_url ) . '">' .
+										'<div class="contributor-image">' . $contributor_image . '</div>' .
+										'<div class="contributor-name">' . $author_display_name . '</div>' .
+									'</a>' .
+								'</div>';
+
+				}
+
+						$contributors_box_html .= '</div>' .
+						'</div>';
+
+						$content = $content . $contributors_box_html;
 			}
 		}
 
