@@ -25,4 +25,4 @@ foreach ( $wp_users as $cp_user ) {
 
 	$i++;
 }
-echo $html;
+echo wp_kses_post( $html );

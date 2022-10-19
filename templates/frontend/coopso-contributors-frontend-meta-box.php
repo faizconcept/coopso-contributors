@@ -1,6 +1,6 @@
 <?php
 /**
- * Display the contributors box at the front end after the post content.
+ * File to display contributors at Front end.	
  *
  * @package Contributors
  *

@@ -49,9 +49,13 @@ class Coopso_Contributors_Admin_Meta_Box {
 		}
 
 		// Check if the nonce valued we received is the same we created.
-		if ( ! isset( $_POST['coopso_contributor_nonce_name'] ) || ! wp_verify_nonce( wp_unslash( $_POST['coopso_contributor_nonce_name'] ), COOPSO_CONTRIBUTORS_PLUGIN_BASE_FILE ) ) {
+		$coopso_contributor_nonce_name = filter_input( INPUT_POST, 'coopso_contributor_nonce_name', FILTER_SANITIZE_STRING );
+		if ( ! isset( $coopso_contributor_nonce_name ) || ! wp_verify_nonce( wp_unslash( $coopso_contributor_nonce_name ), COOPSO_CONTRIBUTORS_PLUGIN_BASE_FILE ) ) {
 			return;
 		}
+
+		$_POST['cp_contributors_field']
+		$coopso_contributor_nonce_name = filter_input( INPUT_POST, 'cp_contributors_field', FILTER_SANITIZE_STRING );
 
 		$cp_contributors_users = ( ! empty( $_POST['cp_contributors_field'] ) ? wp_unslash( $_POST['cp_contributors_field'] ) : array() );
 
