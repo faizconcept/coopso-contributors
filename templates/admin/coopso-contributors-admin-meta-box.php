@@ -13,10 +13,13 @@ foreach ( $wp_users as $cp_user ) {
 
 		$cid = 'contributor' . $i;
 
-	if ( ! empty( $cp_contributors_users ) ) {
+
+	if ( is_array( $cp_contributors_users ) && ! empty( $cp_contributors_users ) ) {
 
 		$checked = in_array( $cp_user->ID, $cp_contributors_users, true ) ? 'checked' : '';
+
 	}
+
 	$html .=
 	'<div class="coopso-contributors-authors">' .
 	'<input type="checkbox" name="cp_contributors_field[]" value="' . (int) $cp_user->ID . '" id="' . esc_html( $cid ) . '" ' . esc_html( $checked ) . ' />' .
@@ -30,10 +33,11 @@ $allowed = array(
 		'class' => array(),
 	),
 	'input' => array(
-		'type'  => array(),
-		'name'  => array(),
-		'value' => array(),
-		'id'    => array(),
+		'type'    => array(),
+		'name'    => array(),
+		'value'   => array(),
+		'id'      => array(),
+		'checked' => array(),
 	),
 	'label' => array(
 		'for' => array(),

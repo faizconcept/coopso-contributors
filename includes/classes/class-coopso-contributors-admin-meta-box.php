@@ -71,10 +71,10 @@ class Coopso_Contributors_Admin_Meta_Box {
 	 */
 	public function coopso_contributors_box_html( $post ) {
 
-		$cp_contributors_users = get_post_meta( $post->ID, 'coopso_contributors_box_id' );
+		$coopso_contributors_user_ids = get_post_meta( $post->ID, 'coopso_contributors_box_id' );
 
-		if ( is_array( $cp_contributors_users ) && ! empty( $cp_contributors_users ) ) {
-			$cp_contributors_users = $cp_contributors_users[0];
+		if ( is_array( $coopso_contributors_user_ids ) && ! empty( $coopso_contributors_user_ids ) ) {
+			$cp_contributors_users = $coopso_contributors_user_ids[0];
 		}
 
 		$user_query = new WP_User_Query(
