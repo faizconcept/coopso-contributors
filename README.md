@@ -3,9 +3,11 @@ This is a WordPress contributors plugin. Admin can select the multiple users who
 
 ## Plugin demo
 Admin side:
-![coopo-contributors-admin](https://user-images.githubusercontent.com/17870980/196948483-d7bdd0f4-c1ea-4332-bc41-6975d7f3289f.jpg)
+![coopso-contributors-admin-demo](https://user-images.githubusercontent.com/17870980/196995264-7d7a9e16-5ea2-4e4d-bbd5-b9efc3f8a13e.jpg)
+
 Front end side:
-![coopso-contributors-frontend](https://user-images.githubusercontent.com/17870980/196948534-87139502-4741-4449-b1f3-2759a6099912.jpg)
+![coopso-contributors-frontend-demo](https://user-images.githubusercontent.com/17870980/196995309-f9693bd4-7a80-4ab2-beb6-3047657d3f9e.jpg)
+
 
 
 ## Installing 
