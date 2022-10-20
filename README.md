@@ -18,7 +18,7 @@ Front end side:
 2. At the front end of the post details page, the Contributors box will be displayed. In the contributors, box contributor name and Gravatar will be displayed. Guest users can click on the username or Gravatar and it will be redirected to the author page.
 
 ## Developer
-Developer can also check the unit tests. In the tests folder there are unit testing files. So developer can also check the unit testing by WP-CLI. 
+The developer can also check the unit tests. In the tests folder, there are unit testing files. So the developer can also check the unit testing by WP-CLI.
 
 ## Author
 Faiz Shaikh <a href="https://github.com/faizconcept/">Faiz Shaikh</a>
