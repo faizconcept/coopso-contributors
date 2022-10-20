@@ -25,4 +25,18 @@ foreach ( $wp_users as $cp_user ) {
 
 	$i++;
 }
-echo wp_kses_post( $html );
+$allowed = array(
+	'div'   => array(
+		'class' => array(),
+	),
+	'input' => array(
+		'type'  => array(),
+		'name'  => array(),
+		'value' => array(),
+		'id'    => array(),
+	),
+	'label' => array(
+		'for' => array(),
+	),
+);
+echo wp_kses( $html, $allowed );
