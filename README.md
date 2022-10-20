@@ -17,9 +17,3 @@ Front end side:
 1. In the post edit or new page, the "contributors" meta box will be displayed. In this box, all authors, editors, and admin users will be displayed. From the backend admin/authors/editors/ can select the contributor's name who contributes to the post.
 2. At the front end of the post details page, the Contributors box will be displayed. In the contributors, box contributor name and Gravatar will be displayed. Guest users can click on the username or Gravatar and it will be redirected to the author page.
 
-## Composer Scripts
-
-This plugin utilizes npm scripts for task management utilities.
-
-* `composer install` - Installs the necessary files.
-* `composer run test` - Runs the tests.
