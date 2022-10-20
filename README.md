@@ -1,5 +1,5 @@
 # Coopso Contributors
-This is a WordPress contributors plugin. Admin can select the multiple users who contribute into the post. When admin can activate this plugin then contributors' meta box will be displayed and admin can select the users (editors, authors, admin) who can contribute to the post. At the front end under the post content there will be contributors box will be displayed. In the contributors box  users (authors, editors and admin) name and Gravatars will be displayed who selected by in the admin side. Guest user can click on the Gravatar or username and it will be redirect to author page. 
+This is a WordPress contributors plugin. Admin can select the multiple users who contribute to the post. When the admin can activate this plugin then the contributors' meta box will be displayed and the admin can select the users (editors, authors, admin) who can contribute to the post. At the front end under the post details page after the post content, there will be contributors box will be displayed. In the contributor's box,   users (authors, editors, and admin) names and Gravatars will be displayed. The guest users can click on the Gravatar or username and it will be redirected to the author page.
 
 ## Plugin demo
 Admin side:
@@ -14,8 +14,8 @@ Front end side:
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 
 ## How to Use
-1. In the post edit or new page "contributors" meta box will be displayed. In this box all authors, editors and admin users will be displayed. From the backend admin/authors/editors/ can select the contributors name who contributes to the post. 
-2. At the front end in the post details page, Contributors box will be displayed. In the contributors box contributor name and Gravatar will be displayed. Guest user can click on the username or Gravatar and it will be redirect to author page. 
+1. In the post edit or new page, the "contributors" meta box will be displayed. In this box, all authors, editors, and admin users will be displayed. From the backend admin/authors/editors/ can select the contributor's name who contributes to the post.
+2. At the front end of the post details page, the Contributors box will be displayed. In the contributors, box contributor name and Gravatar will be displayed. Guest users can click on the username or Gravatar and it will be redirected to the author page.
 
 ## Composer Scripts
 
