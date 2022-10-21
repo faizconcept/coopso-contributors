@@ -1,5 +1,5 @@
 # Coopso Contributors
-This is a WordPress contributors plugin. Admin can select the multiple users who contribute to the post. When the admin can activate this plugin then the contributors' meta box will be displayed and the admin can select the users (editors, authors, admin) who can contribute to the post. At the front end under the post details page after the post content, there will be contributors box will be displayed. In the contributor's box,   users (authors, editors, and admin) names and Gravatars will be displayed. The guest users can click on the Gravatar or username and it will be redirected to the author page.
+This is a WordPress contributors plugin. Admin can select the multiple users who contribute to the post. When the admin can activate this plugin then the contributors' meta box will be displayed in the post page admin side, and the admin can select the users (editors, authors, admin) who can contribute to the post. At the front end under the post details page after the post content, there will be contributors box will be displayed. In the contributor's box, users (authors, editors, and admin) names and Gravatars will be displayed. The guest users can click on the Gravatar or username and it will be redirected to the author page.
 
 ## Plugin demo
 Admin side:
