@@ -3,10 +3,12 @@ This is a WordPress contributors plugin. The user(admin, author and editor) can 
 
 ## Plugin demo
 Demo Link:
-https://conceptopensource.com/wp-demo/wp-admin/
-Username: demo
-Password: demo
-Frontend Link:
+1. https://conceptopensource.com/wp-demo/wp-admin/
+
+**Username: demo**
+**Password: demo**
+
+2. Frontend Link:
 https://conceptopensource.com/wp-demo/index.php/2022/10/20/test-post/
 
 Admin side:
