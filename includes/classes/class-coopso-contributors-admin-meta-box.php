@@ -19,15 +19,15 @@ class Coopso_Contributors_Admin_Meta_Box {
 	 * Constructor function.
 	 */
 	public function __construct() {
-		add_action( 'add_meta_boxes', array( $this, 'create_contributors_box' ) );
-		add_action( 'save_post', array( $this, 'save_contributors_box' ) );
+		add_action( 'add_meta_boxes', array( $this, 'coopso_create_contributors_box' ) );
+		add_action( 'save_post', array( $this, 'coopso_save_contributors_box' ) );
 
 	}
 
 	/**
 	 * To add the meta box in the admin post area
 	 */
-	public function create_contributors_box() {
+	public function coopso_create_contributors_box() {
 		add_meta_box(
 			'coopso_contributors_box_id',
 			'Contributors',
@@ -42,7 +42,7 @@ class Coopso_Contributors_Admin_Meta_Box {
 	 *
 	 * @param integer $post_id post id of the post.
 	 */
-	public function save_contributors_box( $post_id ) {
+	public function coopso_save_contributors_box( $post_id ) {
 
 		if ( isset( $_POST['post_type'] ) && 'post' === $_POST['post_type'] && ! current_user_can( 'edit_post', $post_id ) ) {
 			return;
