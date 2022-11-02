@@ -3,7 +3,7 @@ Contributors: Faiz Shaikh
 Tags: contributors, multiple contributors, post contributor
 Requires at least: 5.0
 Tested up to: 6.0.1
-Stable tag: 1.0
+Stable tag: 1.0.0
 License: GPLv2 or later
 
 WordPress contributors plugin. The user(admin, author and editor) can select the multiple users who contribute to the post and at the front end after the post contributors will be displayed.
